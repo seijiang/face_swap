@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<title>level5</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}">
+<style>
+    h1 {
+    color: #12100f;
+    font-size: 55px;
+    }
+
+    body {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: rgb(244, 247, 243);
+    }
+
+    .menuBtn {
+    margin-top: 100px;
+    margin-left: 440px;
+    margin-bottom: 10px;
+    color: #12100f;
+    background: #bfedec;
+    border-radius: 15px;
+    border: 0px;
+    height: 50px;
+    width: 300px;
+    }
+
+    .menuBtn:hover {
+    cursor: pointer;
+    transition: all 0.5s;
+    transform: scale(120%, 120%);
+    }
+</style>
+
+<header>
+    <h1 style="margin-right:1%;text-align:center;">实时换脸 </h1>
+    <h2 style="margin-right:1%;text-align:center;">实时换脸将打开您的摄像头实时为您换脸<br>点击开始换脸按钮即可开始</h2>
+</header>
+<form method="post" enctype="multipart/form-data">
+    <input id="enter_btn" name="enter_btn" type="submit" value="开始换脸" class="menuBtn"> 
+    <input id="back_btn" name="back_btn" type="submit" value="返回" class="menuBtn"> 
+</form>
+</body>
+</html>

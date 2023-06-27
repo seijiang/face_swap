@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<title>level5</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}">
+<style>
+    h1 {
+    color: #12100f;
+    font-size: 55px;
+    }
+
+    body {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: rgb(244, 247, 243);
+    }
+
+    .menuBtn {
+    margin-top: 30px;
+    margin-left: 440px;
+    margin-bottom: 10px;
+    color: #12100f;
+    background: #bfedec;
+    border-radius: 15px;
+    border: 0px;
+    height: 30px;
+    width: 300px;
+    }
+
+
+
+    .menuBtn:hover {
+    cursor: pointer;
+    transition: all 0.5s;
+    transform: scale(120%, 120%);
+    }
+    .loadBtn {
+    margin-top: 30px;
+    margin-left: 440px;
+    margin-bottom: 10px;
+    color: #12100f;
+    background:  #ffc107;
+    border-radius: 15px;
+    border: 0px;
+    height: 30px;
+    width: 300px;
+    }
+    .loadBtn:hover {
+    cursor: pointer;
+    transition: all 0.5s;
+    transform: scale(120%, 120%);
+    }
+    .loadBtn2 {
+    margin-top: 30px;
+    margin-left: 440px;
+    margin-bottom: 10px;
+    color: #12100f;
+    background:  #20c997;
+    border-radius: 15px;
+    border: 0px;
+    height: 30px;
+    width: 300px;
+    }
+    .loadBtn2:hover {
+    cursor: pointer;
+    transition: all 0.5s;
+    transform: scale(120%, 120%);
+    }
+
+</style>
+
+<script>
+    function moveElementValue(srcId, destId, defaultValue="选择文件") {
+        var v = document.getElementById(srcId).value
+        if (v != "") {
+            document.getElementById(destId).value = document.getElementById(srcId).value;
+        } else {
+            document.getElementById(destId).value = defaultValue;
+        }
+    }
+    function clickElement(id) {
+        document.getElementById(id).click();
+    }
+</script>
+
+<header>
+    <h1 style="margin-right:1%;text-align:center;"><label for="text">图片换脸</label> </h1>
+    <h2 style="margin-right:1%;text-align:center;"><label for="text">图片换脸会将原图片中特定的人脸(被换的人脸)换成您指定的人脸(换入的人脸),上传文件具体需求如下:</label> </h2>
+</header>
+<form method="post" enctype="multipart/form-data">
+    <h3 style="margin-right:1%;text-align:center;">请注意:1.原图片和换入的人脸图片不可为空</h3>
+    <h3 style="margin-right:1%;text-align:center;">2.被换的人脸图片可以为空(即可以不上传),如果为空,则将视频中检测出的所有人脸替换</h3>
+    <h3 style="margin-right:1%;text-align:center;">3.被换的人脸图片中检测出来的所有人脸都将被换</h3>
+    <h3 style="margin-right:1%;text-align:center;">4.换入的人脸图片如果有多人,则将检测出的第一个人作为换入的人脸</h3>
+    <input id="original_face" name="original_face" type="file" style="display:none" onchange="moveElementValue('original_face', 'original_face_btn', '选择原始图片')">
+    <input id="original_face_btn" type="button" class="loadBtn" value="选择原始图片" onclick="clickElement('original_face')">
+
+    <input id="be_swapped_face" name="be_swapped_face" type="file" style="display:none" onchange="moveElementValue('be_swapped_face', 'be_swapped_face_btn','选择被换的人脸图片')">
+    <input id="be_swapped_face_btn" type="button" class="loadBtn2" value="选择被换的人脸图片" onclick="clickElement('be_swapped_face')">
+
+    <input id="swap_face" name="swap_face" type="file" style="display:none" onchange="moveElementValue('swap_face', 'swap_face_btn','选择换入的人脸图片')">
+    <input id="swap_face_btn" type="button" class="loadBtn" value="选择换入的人脸图片" onclick="clickElement('swap_face')">
+
+    <input id="enter_btn" name="enter_btn" type="submit" value="开始换脸" class="menuBtn">
+    <input id="back_btn" name="back_btn" type="submit" value="返回" class="menuBtn">
+
+</form>
+</body>
+</html>

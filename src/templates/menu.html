@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<title>level5</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}">
+<style>
+  h1 {
+    color: #12100f;
+    font-size: 55px;
+  }
+
+  body {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: rgb(244, 247, 243);
+  }
+
+  .menuBtn {
+    margin-top: 50px;
+    margin-left: 440px;
+    margin-bottom: 10px;
+    color: #12100f;
+    background: #bfedec;
+    border-radius: 15px;
+    border: 0px;
+    height: 50px;
+    width: 300px;
+  }
+
+  .menuBtn:hover {
+    cursor: pointer;
+    transition: all 0.5s;
+    transform: scale(120%, 120%);
+  }
+</style>
+
+<header>
+    <h1 style="margin-right:1%;text-align:center;"><label for="text">欢迎来到弱智换脸网站<br>^^</label> </h1>
+    <h2 style="margin-right:1%;text-align:center;"><label for="text">请选择您想探索的功能</label> </h2>
+</header>
+<form method="post">
+    <button id="picture_change_face_btn" name="picture_change_face_btn" type="submit" value="图片换脸" class="menuBtn">图片换脸</button>
+    <button id="video_change_face_btn" name="video_change_face_btn" type="submit" value="视频换脸" class="menuBtn">视频换脸 </button>
+    <button id="camera_change_face_btn" name="camera_change_face_btn" type="submit" value="实时换脸" class="menuBtn">实时换脸 </button>
+</form>
+</body>
+</html>
