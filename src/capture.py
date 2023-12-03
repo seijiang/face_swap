@@ -6,7 +6,7 @@ import numpy as np
 class CameraSwap:
     def __init__(self) -> None:
         self.capture = cv2.VideoCapture(0)
-        self.face = cv2.imread("lianpu.png", cv2.IMREAD_UNCHANGED)
+        self.face = cv2.imread("media/lianpu.png", cv2.IMREAD_UNCHANGED)
         self.end = False
 
     def one_frame(self):
